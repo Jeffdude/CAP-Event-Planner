@@ -15,11 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.app.FragmentActivity;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -30,6 +32,7 @@ public class MainActivity extends Activity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    TextView sectionTwoTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,9 @@ public class MainActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        Button mainButton = (Button) findViewById(R.id.cancel_button);
+        mainButton.setOnClickListener(this);
     }
 
     @Override
@@ -105,6 +111,13 @@ public class MainActivity extends Activity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View v) {
+        // TODO Here we would actually save the data on the page, which means
+        // we would have to add it to a list of "in progress" CAP events for
+        //the user.
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -133,8 +146,13 @@ public class MainActivity extends Activity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
+            if(this.getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+                View rootView = inflater.inflate(R.layout.fragment_create_event, container, false);
+                return rootView;
+            } else {
+                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                return rootView;
+            }
         }
 
         @Override
