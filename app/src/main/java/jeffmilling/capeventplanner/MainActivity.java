@@ -66,6 +66,9 @@ public class MainActivity extends Activity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
+                break;
         }
     }
 
@@ -133,8 +136,26 @@ public class MainActivity extends Activity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
+            if this.getArguments().getInt(ARG_SECTION_NUMBER) == 1 {
+                View rootView = inflater.inflate(R.layout.fragment_upcoming_events, container, false);
+                return rootView;
+            }
+            else if this.getArguments().getInt(ARG_SECTION_NUMBER) == 2 {
+                View rootView = inflater.inflate(R.layout.fragment_approve_event, container, false);
+                return rootView;
+            }
+            else if this.getArguments().getInt(ARG_SECTION_NUMBER) == 3 {
+                View rootView = inflater.inflate(R.layout.fragment_create_event, container, false);
+                return rootView;
+            }
+            else if this.getArguments().getInt(ARG_SECTION_NUMBER) == 4 {
+                View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+                return rootView;
+            }
+            else{
+                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                return rootView;
+            }
         }
 
         @Override
