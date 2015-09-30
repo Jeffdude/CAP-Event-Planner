@@ -4,6 +4,7 @@
     <string name="title_section1">Upcoming Events</string>
     <string name="title_section2">Approve Events</string>
     <string name="title_section3">Create Events</string>
+    <string name="title_section4">Settings</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
