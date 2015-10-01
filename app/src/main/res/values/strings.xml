@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">CAP Event Planner</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Create Event</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Upcoming Events</string>
+    <string name="title_section2">Approve Events</string>
+    <string name="title_section3">Create Events</string>
 
     <string name="event_name_hint">Event name goes here...</string>
     <string name="event_date_hint">Use mm/dd/yyyy format...</string>
