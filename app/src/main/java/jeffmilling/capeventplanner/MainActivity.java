@@ -151,8 +151,7 @@ public class MainActivity extends Activity
             else if (this.getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
                 View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
                 return rootView;
-            }
-            else{
+            } else {
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);
                 return rootView;
             }
